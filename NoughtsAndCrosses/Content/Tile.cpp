@@ -21,6 +21,7 @@ Tile::Tile(std::shared_ptr<DX::DeviceResources> deviceResources)
   , state{TileState::Empty}         
   , spriteBatch{nullptr}
   , commonStates{nullptr}
+  , spriteSourceRectangle{nullptr}
 {
   //Use DirectX Tool Kit to load an image into our spriteTexture member variable
   //  This completes the construction of a Tile object as all member variables
@@ -40,6 +41,13 @@ Tile::Tile(std::shared_ptr<DX::DeviceResources> deviceResources)
     = std::unique_ptr<SpriteBatch>(new SpriteBatch(deviceResources->GetD3DDeviceContext()));
   this->commonStates
     = std::unique_ptr<CommonStates>(new CommonStates(deviceResources->GetD3DDevice()));
+
+  //Initialize the sprite source rectangle to draw the leftmost image
+  this->spriteSourceRectangle = std::unique_ptr<RECT>(new RECT);  //A RECT object with 0 width, 0 height and it's top left corner at (0,0)
+  this->spriteSourceRectangle->left = 0;  //x coordinate of the top left corner
+  this->spriteSourceRectangle->top = 0;   //y coordinate of the top left corner
+  this->spriteSourceRectangle->right = 64; //x coordinate of the bottom right corner
+  this->spriteSourceRectangle->bottom= 64; //y coordinate of the bottom right corner
 }
 
 
@@ -59,7 +67,13 @@ void Tile::Render()
   this->spriteBatch->Draw(
     this->spriteTexture.Get(),  //Need the raw C++ pointer to the sprite texture
     this->spritePosition,
-    this->spriteTint
+    this->spriteSourceRectangle.get(),  //Need the raw C++ pointer
+    this->spriteTint,
+    0,  //Angle of rotation in radians
+    Vector2(0,0), //Origin for the rotation
+    1.0f, //Scale factor
+    DirectX::SpriteEffects_None, //Reflections about the horizontal and verticle axes
+    0.0f  //Layer depth; not required as we use DirectX::SpriteSortMode_Deferred
     );
   //Instruct the SpriteBatch to actually render the sprites
   this->spriteBatch->End();

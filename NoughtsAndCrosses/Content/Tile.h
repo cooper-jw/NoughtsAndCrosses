@@ -29,6 +29,7 @@ namespace NoughtsAndCrosses
     DirectX::SimpleMath::Color spriteTint;
     DirectX::SimpleMath::Vector2 spritePosition;
     TileState state;
+    std::unique_ptr<RECT> spriteSourceRectangle;
 
     //DirectX Tool Kit
     std::unique_ptr<DirectX::SpriteBatch> spriteBatch;
