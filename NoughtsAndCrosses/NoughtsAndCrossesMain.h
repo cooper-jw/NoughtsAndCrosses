@@ -3,6 +3,7 @@
 #include "Common\StepTimer.h"
 #include "Common\DeviceResources.h"
 #include "Content\BackgroundRenderer.h"
+#include "Content\Tile.h"
 
 // Renders Direct2D and 3D content on the screen.
 namespace NoughtsAndCrosses
@@ -26,6 +27,7 @@ namespace NoughtsAndCrosses
 
 		// TODO: Replace with your own content renderers.
     BackgroundRenderer m_background;
+    Tile m_tile;
 
 		// Rendering loop timer.
 		DX::StepTimer m_timer;

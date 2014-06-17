@@ -43,12 +43,18 @@
     <ClCompile Include="Content\BackgroundRenderer.cpp">
       <Filter>Content</Filter>
     </ClCompile>
+    <ClCompile Include="Content\Tile.cpp">
+      <Filter>Content</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.h" />
     <ClInclude Include="NoughtsAndCrossesMain.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Content\BackgroundRenderer.h">
+      <Filter>Content</Filter>
+    </ClInclude>
+    <ClInclude Include="Content\Tile.h">
       <Filter>Content</Filter>
     </ClInclude>
   </ItemGroup>

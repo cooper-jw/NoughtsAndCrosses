@@ -11,6 +11,7 @@ using namespace Concurrency;
 NoughtsAndCrossesMain::NoughtsAndCrossesMain(const std::shared_ptr<DX::DeviceResources>& deviceResources) :
 	m_deviceResources(deviceResources)
   , m_background{}
+  , m_tile{deviceResources}
 {
 	// Register to be notified if the Device is lost or recreated
 	m_deviceResources->RegisterDeviceNotify(this);
@@ -76,7 +77,7 @@ bool NoughtsAndCrossesMain::Render()
 
 	// Render the scene objects.
 	// TODO: Replace this with your app's content rendering functions.
-
+  m_tile.Render();
 
 	return true;
 }
