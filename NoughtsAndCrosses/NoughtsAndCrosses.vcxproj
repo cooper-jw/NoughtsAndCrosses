@@ -183,7 +183,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <Image Include="Assets\BoardTiles.png" />
+    <Image Include="Assets\house.png" />
     <Image Include="Assets\Logo.png" />
+    <Image Include="Assets\PlayerWalkSide.png" />
     <Image Include="Assets\SmallLogo.png" />
     <Image Include="Assets\StoreLogo.png" />
     <Image Include="Assets\SplashScreen.png" />

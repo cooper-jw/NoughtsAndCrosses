@@ -68,5 +68,11 @@
     <Image Include="Assets\BoardTiles.png">
       <Filter>Assets</Filter>
     </Image>
+    <Image Include="Assets\house.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\PlayerWalkSide.png">
+      <Filter>Assets</Filter>
+    </Image>
   </ItemGroup>
 </Project>
