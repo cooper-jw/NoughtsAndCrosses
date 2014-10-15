@@ -24,6 +24,8 @@ namespace NoughtsAndCrosses
 
     void Render();
 
+	void SetState(TileState newState);
+
   private:
     Microsoft::WRL::ComPtr<ID3D11ShaderResourceView> spriteTexture; 
     DirectX::SimpleMath::Color spriteTint;

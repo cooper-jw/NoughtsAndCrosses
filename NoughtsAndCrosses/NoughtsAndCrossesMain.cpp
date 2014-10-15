@@ -77,7 +77,8 @@ bool NoughtsAndCrossesMain::Render()
 
 	// Render the scene objects.
 	// TODO: Replace this with your app's content rendering functions.
-  m_tile.Render();
+	m_tile.SetState(TileState::Nought);
+	m_tile.Render();
 
 	return true;
 }
